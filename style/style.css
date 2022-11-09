@@ -211,3 +211,7 @@ body.darkMode {
   background-color: #252525;
   color: #e9e3e3;
 }
+.change__color.darkMode {
+  background-color: #e9e3e3;
+  color: #252525;
+}

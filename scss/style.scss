@@ -215,4 +215,8 @@ body {
   border-radius: 10px;
   background-color: $bc-black;
   color: $bc-white;
+  &.darkMode {
+    background-color: $bc-white;
+    color: $bc-black;
+  }
 }
