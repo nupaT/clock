@@ -97,13 +97,19 @@ body {
   padding-top: 50px;
   justify-content: center;
   background-color: $bc-white;
+  &.darkMode {
+    background-color: $bc_black;
+  }
 }
 
 .clock__card {
-  // margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .clock__circle {
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,6 +117,9 @@ body {
   height: 350px;
   border: 3px solid $bc-black;
   border-radius: 50%;
+  &.darkMode {
+    border: 3px solid $bc-white;
+  }
 }
 
 .clock__circle:before {
@@ -123,7 +132,10 @@ body {
   z-index: 999;
 }
 
-
+.clock__circle.darkMode:before {
+  border: 1px solid $bc-white;
+  background-color: $bc-black;
+}
 
 .arrow__hour,
 .arrow__min,
@@ -168,6 +180,10 @@ body {
   z-index: 10;
 }
 
+.hour.darkMode:before {
+  background-color: $bc-white;
+}
+
 .min:before {
   content: "";
   position: absolute;
@@ -178,6 +194,10 @@ body {
   z-index: 11;
 }
 
+.min.darkMode:before {
+  background-color: $bc-white;
+}
+
 .sec:before {
   content: "";
   position: absolute;
@@ -186,4 +206,13 @@ body {
   border-radius: 5px 5px 0 0;
   background-color: #e22020;
   z-index: 12;
+}
+
+.change__color {
+  width: 200px;
+  height: 50px;
+  font-size: 24px;
+  border-radius: 10px;
+  background-color: $bc-black;
+  color: $bc-white;
 }
