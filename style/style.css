@@ -134,7 +134,8 @@ body.darkMode {
 
 .arrow__hour,
 .arrow__min,
-.arrow__sec {
+.arrow__sec,
+.dial__box {
   position: absolute;
 }
 
@@ -156,9 +157,16 @@ body.darkMode {
   width: 320px;
 }
 
+.dial__box,
+.dial {
+  height: 350px;
+  width: 350px;
+}
+
 .hour,
 .min,
-.sec {
+.sec,
+.dial {
   display: flex;
   justify-content: center;
   position: absolute;
@@ -214,4 +222,17 @@ body.darkMode {
 .change__color.darkMode {
   background-color: #e9e3e3;
   color: #252525;
+}
+
+.dial:before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  border-radius: 5px 5px 0 0;
+  background-color: #252525;
+}
+
+.dial.darkMode:before {
+  background-color: #e9e3e3;
 }

@@ -139,7 +139,8 @@ body {
 
 .arrow__hour,
 .arrow__min,
-.arrow__sec {
+.arrow__sec,
+.dial__box {
   position: absolute;
 }
 
@@ -161,9 +162,16 @@ body {
   width: 320px;
 }
 
+.dial__box,
+.dial {
+  height: 350px;
+  width: 350px;
+}
+
 .hour,
 .min,
-.sec {
+.sec,
+.dial {
   display: flex;
   justify-content: center;
   position: absolute;
@@ -219,4 +227,17 @@ body {
     background-color: $bc-white;
     color: $bc-black;
   }
+}
+
+.dial:before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  border-radius: 5px 5px 0 0;
+  background-color: $bc-black;
+}
+
+.dial.darkMode:before {
+  background-color: $bc-white;
 }
