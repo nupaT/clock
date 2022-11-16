@@ -166,7 +166,8 @@ body.darkMode {
 .hour,
 .min,
 .sec,
-.dial {
+.dial,
+.numb {
   display: flex;
   justify-content: center;
   position: absolute;
@@ -235,4 +236,17 @@ body.darkMode {
 
 .dial.darkMode:before {
   background-color: #e9e3e3;
+}
+
+.numb:after {
+  content: attr(data-after);
+  position: absolute;
+  top: 30px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #252525;
+}
+
+.numb.darkMode:after {
+  color: #e9e3e3;
 }

@@ -8,7 +8,6 @@ const changeColor = document.querySelector("#change__color");
 
 //dial
 const dialBox = document.querySelector(".dial__box");
-const dial = document.querySelector(".dial");
 
 //clock
 setInterval(() => {
@@ -33,11 +32,19 @@ changeColor.addEventListener("click", () => {
 //dial
 function createDial(count) {
   let angle = 360 / count;
-  for (let i = 1; i < count; i++) {
+  for (let i = 0; i < count; i++) {
     let newElDial = document.createElement("div");
     newElDial.classList.add("dial", "colorMode");
     newElDial.style.transform = `rotateZ(${i * angle}deg)`;
     dialBox.appendChild(newElDial);
+    let newNumb = document.createElement("div");
+    newNumb.classList.add("numb", "colorMode");
+    if (i == 0) {
+      newNumb.dataset.after = 12;
+    } else {
+      newNumb.dataset.after = i;
+    }
+    newElDial.appendChild(newNumb);
   }
 }
 
