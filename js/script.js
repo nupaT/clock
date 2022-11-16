@@ -33,11 +33,17 @@ changeColor.addEventListener("click", () => {
 function createDial(count) {
   let angle = 360 / count;
   for (let i = 0; i < count; i++) {
+    //create block for dial lines
     let newElDial = document.createElement("div");
+    //add styles
     newElDial.classList.add("dial", "colorMode");
+    //rotate dial lines
     newElDial.style.transform = `rotateZ(${i * angle}deg)`;
+    //add line bloks in DOM
     dialBox.appendChild(newElDial);
+    //create bloxk for numbers
     let newNumb = document.createElement("div");
+    //add styles
     newNumb.classList.add("numb", "colorMode");
     if (i == 0) {
       newNumb.dataset.after = 12;
