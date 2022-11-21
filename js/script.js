@@ -8,6 +8,7 @@ const changeColor = document.querySelector("#change__color");
 
 //dial
 const dialBox = document.querySelector(".dial__box");
+const numberBox = document.querySelector(".number__box");
 
 //clock
 setInterval(() => {
@@ -39,18 +40,23 @@ function createDial(count) {
     newElDial.classList.add("dial", "colorMode");
     //rotate dial lines
     newElDial.style.transform = `rotateZ(${i * angle}deg)`;
-    //add line bloks in DOM
+    //add line blocks in DOM
     dialBox.appendChild(newElDial);
-    //create bloxk for numbers
+    //create block for numbers
     let newNumb = document.createElement("div");
+    let boxNumber = document.createElement("div");
     //add styles
     newNumb.classList.add("numb", "colorMode");
+    boxNumber.classList.add("boxNumber", "colorMode");
     if (i == 0) {
-      newNumb.dataset.after = 12;
+      boxNumber.innerHTML = 12;
     } else {
-      newNumb.dataset.after = i;
+      boxNumber.innerHTML = i;
     }
-    newElDial.appendChild(newNumb);
+    newNumb.style.transform = `rotateZ(${i * angle}deg)`;
+    boxNumber.style.transform = `rotateZ(${-i * angle}deg)`;
+    numberBox.appendChild(newNumb);
+    newNumb.appendChild(boxNumber);
   }
 }
 

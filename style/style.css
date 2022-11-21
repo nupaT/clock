@@ -135,7 +135,8 @@ body.darkMode {
 .arrow__hour,
 .arrow__min,
 .arrow__sec,
-.dial__box {
+.dial__box,
+.number__box {
   position: absolute;
 }
 
@@ -238,15 +239,33 @@ body.darkMode {
   background-color: #e9e3e3;
 }
 
-.numb:after {
-  content: attr(data-after);
+.number__box {
   position: absolute;
-  top: 30px;
-  font-size: 20px;
-  font-weight: 600;
-  color: #252525;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.numb {
+  height: 300px;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
 }
 
 .numb.darkMode:after {
+  color: #e9e3e3;
+}
+
+.boxNumber {
+  width: 15px;
+  height: 23px;
+  font-size: 25px;
+  color: #252525;
+}
+
+.boxNumber.darkMode {
   color: #e9e3e3;
 }
